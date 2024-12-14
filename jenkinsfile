@@ -15,7 +15,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Build the project using npm
-                bat 'npm test'
+                bat 'npm run dev'
             }
         }
     }
