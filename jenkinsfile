@@ -36,10 +36,10 @@ pipeline {
 
         stage('Run Docker Container') {
             steps {
-                echo 'Running Docker container...'
+                echo 'Running the Docker container...'
                 script {
-                    // Running the container on port 3000 (host) and 80 (container)
-                    sh "docker run -d -p 3000:80 ${DOCKER_IMAGE}"
+                    // Run the Docker container and map port 88 (host) to 3000 (container)
+                    bat "docker run -d -p 88:3000 ${DOCKER_IMAGE}"
                 }
             }
         }
