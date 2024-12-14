@@ -2,7 +2,7 @@
 FROM node:18-alpine AS build
 
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR /demomypc
 
 # Copy package.json and package-lock.json for dependency installation
 COPY package*.json ./
@@ -20,7 +20,7 @@ RUN npm run build
 FROM nginx:stable-alpine
 
 # Copy the built files from the previous stage to the Nginx default HTML directory
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build /demomypc/build /usr/share/nginx/html
 
 # Expose port 80 for the application
 EXPOSE 80
