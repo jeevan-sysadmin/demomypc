@@ -1,0 +1,125 @@
+/* src/pages/InfoBoxesPage.css */
+
+.info-boxes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #b1ddf1;
+}
+
+.info-box {
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.096);
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.info-box:hover {
+    background-color: #fccb06;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Typography */
+.info-box h2 {
+    color: #333;
+}
+
+.info-box h3 {
+    color: #666;
+}
+
+.warranty-logo {
+    width: 80px;
+    margin-top: 10px;
+}
+
+.centered-header {
+    text-align: center;
+    font-size: 2rem;
+    color: #000000;
+    margin-top: 30px;
+}
+
+.new-content {
+    margin: 0 20px;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.content-layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.support, .pack, .consultancy-logo {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+}
+
+.right-content, .left-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.left-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.new-content p {
+    line-height: 1.5;
+    margin: 10px 0;
+    text-align: justify;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .info-box {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .content-layout,
+    .left-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .right-content,
+    .left-text {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .centered-header {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .support, .pack, .consultancy-logo {
+        width: 80%;
+        max-width: 250px;
+    }
+
+    .info-boxes-container {
+        padding: 10px;
+    }
+
+    .info-box {
+        padding: 15px;
+        margin: 5px 0;
+    }
+}

@@ -1,0 +1,36 @@
+/* TermsAndConditions.css */
+
+.terms-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Center horizontally */
+  justify-content: center;  /* Center vertically */
+  padding: 20px;
+  max-width: 1200px;  /* Limit the width of the content */
+  margin: 0 auto;
+  background-color: #292727;  /* Black background */
+  color: #ffffff;  /* White text for readability */
+  line-height: 1.6;
+  font-family: 'Arial', sans-serif;
+}
+
+.heading {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.section {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #1e90ff;  /* Light blue for links */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #87cefa;  /* Slightly lighter blue on hover */
+}

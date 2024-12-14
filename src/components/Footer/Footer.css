@@ -1,0 +1,69 @@
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 10px 0; /* Adjusted padding for spacing */
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+  flex-wrap: wrap;
+  padding: 0 50px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  flex-direction: column;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #fccb06;
+}
+
+.footer-contact, .footer-opening {
+  margin-top: 20px;
+  text-align: left;
+  max-width: 200px;
+}
+
+.footer-contact h4, .footer-opening h4 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #fccb06;
+}
+
+.footer-contact p, .footer-opening p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+/* Center-aligned copyright text */
+.footer-copyright {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 0.9em;
+  color: #ccc;
+  
+}
+/* Footer.css */
+
+.email-icon {
+  color: white;  /* Make the email icon white */
+  margin-right: 8px;  /* Optional: Adds a little space between the icon and the email */
+}

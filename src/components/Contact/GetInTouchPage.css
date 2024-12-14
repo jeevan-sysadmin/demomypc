@@ -1,0 +1,147 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=STLiti&display=swap');
+
+/* Main container styling */
+.get-in-touch-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-between; */
+    height: 80vh;
+    background-color: #000000; /* Full-page black background */
+    color: #ffffff; /* White text color */
+    /* text-align: center; */
+    padding: 200px;
+    /* box-sizing: border-box; */
+}
+
+/* Title styling - centered at the top */
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    align-self: center;
+}
+
+/* Layout container for description and support button */
+.content-container {
+    display: flex;
+    width: 100%;
+    max-width: 1800px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Left side - text content and support button */
+.text-content {
+    max-width: 40%;
+    text-align: left;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center; /* Center-aligns the text */
+    margin-bottom: 20px;
+}
+
+
+
+
+/* Support button styling */
+.support-button {
+    background-color: #fccb06;
+    color: #000000;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.support-button:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+}
+
+/* Center - support image */
+.support {
+    width: 50%;
+    max-width: 300px;
+    height: auto;
+    align-self: center;
+    margin: 20px 0;
+}
+
+/* Right side - Quote */
+.quote {
+    max-width: 40%;
+    text-align: right;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.yellow-text {
+    color: yellow;
+    font-family: 'STLiti', cursive;
+}
+
+.red-text {
+    color: red;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .title {
+        font-size: 2rem;
+    }
+    .description {
+        font-size: 1.1rem;
+    }
+    .support-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .text-content, .quote {
+        max-width: 80%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .get-in-touch-container {
+        padding: 1px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    .description {
+        font-size: 0.8rem;
+    }
+
+    .support-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .support {
+        width: 50%;
+    }
+
+    .quote {
+        font-size: 1rem;
+    }
+}

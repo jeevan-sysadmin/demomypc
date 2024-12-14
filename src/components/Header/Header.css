@@ -1,0 +1,67 @@
+/* src/components/Header.css */
+
+.header {
+  background-color: #333; /* Dark background */
+  color: white; /* White text color */
+  position: fixed; /* Fixed position at the top */
+  top: 0; /* Align to the top */
+  width: 100%; /* Full width */
+  z-index: 1000; /* Stack above other elements */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.header-container {
+  max-width: 1200px; /* Max width for the header */
+  margin: 0 auto; /* Center the header */
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Center items vertically */
+  padding: 0 1rem; /* Horizontal padding */
+}
+
+.logo-container {
+  flex: 1; /* Allow the logo container to flex */
+  text-align: center; /* Center the logo */
+}
+
+.logo {
+  max-width: 300px; /* Logo size */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.nav {
+  display: flex; /* Flexbox for navigation */
+}
+
+.nav-links {
+  display: flex; /* Flexbox for navigation links */
+  gap: 1rem; /* Space between links */
+  list-style: none; /* Remove default list styles */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+.nav a {
+  color: white; /* White link color */
+  text-decoration: none; /* No underline */
+  font-weight: bold; /* Bold text */
+  transition: color 0.3s ease; /* Transition for hover effect */
+}
+
+.nav a:hover {
+  color: #ff4500; /* Change color on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .nav {
+    flex-direction: column; /* Stack nav links vertically */
+    align-items: center; /* Center nav items */
+    gap: 0.5rem; /* Space between links */
+  }
+}

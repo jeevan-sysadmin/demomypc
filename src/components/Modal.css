@@ -1,0 +1,67 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it overlays above everything */
+}
+
+/* Modal Content */
+.modal-content {
+  background: rgb(0, 0, 0);
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 1000px; /* Increased max width for larger screens */
+  max-height: 80vh; /* Set a max height for the modal content */
+  width: 100%; /* Responsive width */
+  overflow-y: auto; /* Enable vertical scrolling */
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.664); /* Slightly darker shadow */
+  position: relative; /* Allows positioning of close button */
+  animation: slideIn 0.3s ease; /* Smooth entrance animation */
+}
+
+/* Close Button */
+.close-button {
+  background: transparent;
+  border: none;
+  font-size: 24px; /* Slightly larger for better visibility */
+  cursor: pointer;
+  position: absolute; /* Position absolute to the modal */
+  top: 10px; /* Positioning from top */
+  right: 10px; /* Positioning from right */
+  color: #ffffff; /* Close button color */
+  transition: color 0.3s; /* Transition effect on hover */
+}
+
+.close-button:hover {
+  color: #ff4d4d; /* Change color on hover */
+}
+
+/* Animation for Modal */
+@keyframes slideIn {
+  from {
+      transform: translateY(-20px); /* Start slightly above */
+      opacity: 0; /* Start invisible */
+  }
+  to {
+      transform: translateY(0); /* Slide into view */
+      opacity: 1; /* Fade in */
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modal-content {
+      padding: 15px; /* Adjust padding for smaller screens */
+  }
+  
+  .close-button {
+      font-size: 20px; /* Smaller close button on mobile */
+  }
+}
