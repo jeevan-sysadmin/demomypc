@@ -2,46 +2,22 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_REPO = "appi12/reactjs"  // Replace with your Docker Hub repository
+        DOCKER_HUB_REPO = "appi12/reactjs"
         DOCKER_IMAGE = "${DOCKER_HUB_REPO}:${env.BUILD_NUMBER}"
     }
 
     stages {
-        stage('Checkout Code') {
+        stage('Checkout') {
             steps {
-                echo 'Fetching code from GitHub...'
-                checkout([$class: 'GitSCM',
-                    branches: [[name: '*/main']],
-                    userRemoteConfigs: [[
-                        url: 'https://github.com/jeevan-sysadmin/demomypc.git',
-                        credentialsId: 'b38f3c3c-bbdf-4543-86f7-9197ac9117e1'
-                    ]]
-                ])
-            }
-        }
-
-        stage('Install Dependencies') {
-            steps {
-                echo 'Installing dependencies...'
-                // Run npm install on Windows
-                bat 'npm install'
-            }
-        }
-
-        stage('Build React App') {
-            steps {
-                echo 'Building the React application...'
-                // Run npm build command on Windows
-                bat 'npm run hello'
+                checkout scm
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                echo 'Building the Docker image...'
+                echo 'Building Docker image...'
                 script {
-                    // Build Docker image using Dockerfile
-                    bat "docker build -t ${DOCKER_IMAGE} ."
+                    docker.build("${DOCKER_IMAGE}")
                 }
             }
         }
@@ -50,24 +26,13 @@ pipeline {
             steps {
                 echo 'Pushing Docker image to Docker Hub...'
                 script {
-                    // Push the Docker image to Docker Hub
-                    withDockerRegistry([url: 'https://index.docker.io/v1/', credentialsId: 'docker-hub-credentials']) {
-                        bat "docker push ${DOCKER_IMAGE}"
+                    docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-credentials') {
+                        docker.image("${DOCKER_IMAGE}").push()
                     }
                 }
             }
         }
 
-        stage('Run Docker Container') {
-            steps {
-                echo 'Running the Docker container...'
-                script {
-                    // Run the Docker container and map port 88 to 3000
-                    bat "docker run -d -p 88:3000 ${DOCKER_IMAGE}"
-                }
-            }
-        }
-    }
 
     post {
         success {
