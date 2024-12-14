@@ -33,6 +33,16 @@ pipeline {
                 }
             }
         }
+
+        stage('Run Docker Container') {
+            steps {
+                echo 'Running Docker container...'
+                script {
+                    // Running the container on port 3000 (host) and 80 (container)
+                    sh "docker run -d -p 3000:80 ${DOCKER_IMAGE}"
+                }
+            }
+        }
     }
 
     post {
