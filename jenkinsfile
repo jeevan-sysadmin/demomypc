@@ -8,13 +8,14 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'sudo apt install npm -y' // Fixed to include the installation of npm if necessary
-                sh 'npm install'
+                // Install dependencies and run npm install (ensure npm is in the PATH)
+                bat 'npm install'
             }
         }
         stage('Build') {
             steps {
-                sh 'npm run build'
+                // Build the project using npm
+                bat 'npm run build'
             }
         }
     }
