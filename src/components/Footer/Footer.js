@@ -23,7 +23,7 @@ const Footer = () => {
         {/* Contact Information */}
         <div className="footer-contact">
           <h4>Contact Us</h4>
-          <p><FaPhone /> +91 94457 47768</p>
+          <p><FaPhone /> +91 8220647708</p>
           <p><FaPhone /> +91 90253 80083</p>
           <p><FaEnvelope className="email-icon" /> <a href="mailto:support@a2dpcfactory.com">support@a2dpcfactory.com</a></p>
         </div>
