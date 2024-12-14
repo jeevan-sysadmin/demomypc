@@ -19,6 +19,9 @@ RUN npm run build
 # Stage 2: Serve the application using Nginx
 FROM nginx:stable-alpine
 
+# Remove the contents of /usr/share/nginx/html to ensure a clean directory
+RUN rm -rf /usr/share/nginx/html/*
+
 # Copy the built files from the previous stage to the Nginx default HTML directory
 COPY --from=build /demomypc/build /usr/share/nginx/html
 
