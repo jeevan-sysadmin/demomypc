@@ -33,6 +33,16 @@ pipeline {
                 }
             }
         }
+
+        stage('Run Docker Container') {
+            steps {
+                echo 'Running the Docker container...'
+                script {
+                    // Run the Docker container and map port 88 (host) to 3000 (container)
+                    bat "docker run -d -p 88:80 ${DOCKER_IMAGE}"
+                }
+            }
+        }
     }
 
     post {
